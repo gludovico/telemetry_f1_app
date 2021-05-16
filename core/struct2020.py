@@ -8,6 +8,10 @@ unit16 -> cyteps ushort
 unit8 -> cytpes ubyte
 unit32 -> cytpes uint
 unit64 -> cyptes longlong
+
+
+Packets details info was learning by topic of codemasters
+https://forums.codemasters.com/topic/50942-f1-2020-udp-specification/
 """
 
 class PacketHeader(ctypes.LittleEndianStructure):
@@ -183,3 +187,14 @@ class PacketLapData(ctypes.LittleEndianStructure):
         ('m_header', PacketHeader), # Header
         ('m_lapData', LapData * 22) # Lap data for all cars on track
     ]
+
+
+#EVENTE PACKET
+"""This packet gives details of events that happen during the course of a session.
+Frequency: When the event occurs
+Size: 35 bytes
+
+The event details packet is different for each type of event.
+Make sure only the correct type is interpreted
+"""
+
