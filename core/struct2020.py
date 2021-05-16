@@ -68,6 +68,7 @@ class CarMotionData(ctypes.LittleEndianStructure):
 class PacketMotionData(ctypes.LittleEndianStructure):
     """data structure for all car motion
     """
+    
     _pack_ = 1
     _fields_ = [
         ('m_header', PacketHeader), # Header
